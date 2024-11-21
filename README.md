@@ -96,3 +96,12 @@ gsap.from('div.col-B', { duration: 2, x: "150%", opacity: 1, ease: "power2.in", 
 ### ✨ Credits
 Designed and developed by **@Shehryar-dev**.  
 If you like this project, give it a ⭐ on GitHub!
+
+---
+
+## 💼 Connect
+
+- **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/shehryarkhandiv)
+- **GitHub**: [GitHub](https://github.com/Shehryar-dev)
+- **Twitter**: [X Account](https://x.com/Morphues_S)
+- **Portfolio**: [Portfolio](https://shehriyar-portfolio-v2.netlify.app/)
