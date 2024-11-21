@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Profile Viewer</title>
+    <link rel="icon" href="assets/programming.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script> <!-- Link to GSAP library -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="mt-5">
+        <div class="container mt-5">
+            <div class="row mt-5">
+                <!-- col-1 -->
+                <div class="col col-md-4 mb-5">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="assets/images/avatar1.jpg">
+                        </div>
+                        <div class="card-body">
+                            <h6 class="primary-text">Olivia Smith</h6>
+                            <h6 class="secondary-text">Full Stack Developer</h6>
+                        </div>
+                        <button type="button" class="edit" style=" color: #d5d5d5;
+                        font-size: 16px;
+                        font-weight: 600;
+                        letter-spacing: 0.7px;
+                        margin: 5px 0;" data-bs-toggle="modal" data-bs-target="#exampleModal1"
+                            onclick="showProfileData()">View Profile</button>
+
+                        <div class="details">
+                            <div class="rating">
+                                <h6 class="primary-text"> 86% </h6>
+                                <h6 class="secondary-text"> Rating⭐️ </h6>
+                            </div>
+                            <div class="activity">
+                                <h6 class="primary-text"> 92% </h6>
+                                <h6 class="secondary-text"> Activity⭐️ </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" style="background: transparent;">
+                        <div class="modal-content modal-dialog modal-md primary-text" style="background-color: rgba(255, 255, 255, 0.154);backdrop-filter: blur(20px);box-shadow: 20px 20px 22px rgba(255, 255, 255, 0.1);border-radius: 20px;border: 1px dotted #aaa;
+                            ">
+                            <div class="modal-header">
+                                <h5 class="modal-title " id="exampleModalLabel">&nbsp; Profile Detail🤖🤖🤖🤖🤖</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body w-100">
+                                <table style="padding: 10px;width: 100%; border: 1px solid #aaa;">
+                                    <thead style="border-bottom:1px solid #aaa ;">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Company</th>
+                                            <th>Profile</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td id="name" data-profile-name="Olivia Smith"></td>
+                                            <td id="age" data-profile-age="22"></td>
+                                            <td id="company" data-profile-company="MicroSoft"></td>
+                                            <td id="img" data-profile-img="assets/images/avatar1.jpg">
+                                                <img src="" alt="#" style="width: 5.5rem; border-radius:50% ;
+                                                ">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- col-2 -->
+                <div class="col-A col-md-4 mb-5">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="assets/images/avatar-14.jpg">
+                        </div>
+                        <div class="card-body">
+                            <h6 class="primary-text">Fletcher Previn</h6>
+                            <h6 class="secondary-text">Database Administrator</h6>
+                        </div>
+                        <button type="button" class="edit" style=" color: #d5d5d5;
+                        font-size: 16px;
+                        font-weight: 600;
+                        letter-spacing: 0.7px;
+                        margin: 5px 0;" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            onclick="showProfile()">View Profile</button>
+
+                        <div class="details">
+                            <div class="rating">
+                                <h6 class="primary-text"> 99% </h6>
+                                <h6 class="secondary-text"> Rating⭐️ </h6>
+                            </div>
+                            <div class="activity">
+                                <h6 class="primary-text"> 100% </h6>
+                                <h6 class="secondary-text"> Activity⭐️ </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" style="background: transparent;">
+                        <div class="modal-content modal-dialog modal-md primary-text"
+                            style="background-color: rgba(255, 255, 255, 0.154);backdrop-filter: blur(20px);box-shadow: 20px 20px 22px rgba(255, 255, 255, 0.1);border-radius: 20px;border: 1px dotted #aaa;">
+                            <div class="modal-header">
+                                <h5 class="modal-title " id="exampleModalLabel">&nbsp; Profile Detail🤖🤖🤖🤖🤖 </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body w-100">
+                                <table style="padding: 10px;width: 100%; border: 1px solid #aaa;">
+                                    <thead style="border-bottom:1px solid #aaa ;">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Company</th>
+                                            <th>Profile</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td id="name-1" data-info-name="Fletcher Previn"></td>
+                                            <td id="age-1" data-info-age="37"></td>
+                                            <td id="company-1" data-info-company="MangoDB"></td>
+                                            <td id="img-1" data-info-img="assets/images/avatar-14.jpg">
+                                                <img src="" alt="#" style="width: 5.2rem; border-radius:50% ;">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- col-2 -->
+                <div class="col-B col-md-4 mb-5">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="assets/images/avatar-16.jpg">
+                        </div>
+                        <div class="card-body">
+                            <h6 class="primary-text">Gwynne Shotwell</h6>
+                            <h6 class="secondary-text">Data Scientists</h6>
+                        </div>
+                        <button type="button" class="edit" style=" color: #d5d5d5;
+                        font-size: 16px;
+                        font-weight: 600;
+                        letter-spacing: 0.7px;
+                        margin: 5px 0;" data-bs-toggle="modal" data-bs-target="#exampleModal-2" onclick="show()">View
+                            Profile</button>
+
+                        <div class="details">
+                            <div class="rating">
+                                <h6 class="primary-text"> 92% </h6>
+                                <h6 class="secondary-text"> Rating⭐️ </h6>
+                            </div>
+                            <div class="activity">
+                                <h6 class="primary-text"> 98% </h6>
+                                <h6 class="secondary-text"> Activity⭐️ </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" style="background: transparent;">
+                        <div class="modal-content modal-dialog modal-md primary-text"
+                            style="background-color: rgba(255, 255, 255, 0.154);backdrop-filter: blur(20px);box-shadow: 20px 20px 22px rgba(255, 255, 255, 0.1);border-radius: 20px;border: 1px dotted #aaa;">
+                            <div class="modal-header">
+                                <h5 class="modal-title " id="exampleModalLabel"> &nbsp; Profile Detail🤖🤖🤖🤖🤖</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body w-100">
+                                <table style="padding: 10px;width: 100%; border: 1px solid #aaa;">
+                                    <thead style="border-bottom:1px solid #aaa ;">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Company</th>
+                                            <th>Profile</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td id="name-3" data-name="Gwynne Shotwell"></td>
+                                            <td id="age-3" data-age="39"></td>
+                                            <td id="company-3" data-company="Google"></td>
+                                            <td id="img-3" data-img="assets/images/avatar-16.jpg">
+                                                <img src="" alt="#" style="width: 5.5rem; border-radius:50% ;">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+
+        function showProfileData() {
+            var profileRow = document.querySelector("#name").parentNode;
+            var nameA = profileRow.querySelector("[data-profile-name]").getAttribute("data-profile-name");
+            document.getElementById("name").innerHTML = nameA;
+            var ageA = profileRow.querySelector("[data-profile-age]").getAttribute("data-profile-age");
+            document.getElementById("age").innerHTML = ageA;
+            var companyA = profileRow.querySelector("[data-profile-company]").getAttribute("data-profile-company");
+            document.getElementById("company").innerHTML = companyA;
+            var imgA = profileRow.querySelector("[data-profile-img]").getAttribute('data-profile-img');
+            document.getElementById("img").firstElementChild.src = imgA;
+
+            // canvas
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            confetti({
+                angle: randomInRange(55, 125),
+                spread: randomInRange(50, 70),
+                particleCount: randomInRange(50, 100),
+                origin: { y: 0.6 }
+            });
+        }
+        function showProfile() {
+            var profile = document.querySelector("#name-1").parentNode;
+            var nameB = profile.querySelector("[data-info-name]").getAttribute("data-info-name");
+            document.getElementById("name-1").innerHTML = nameB;
+            var ageB = profile.querySelector("[data-info-age]").getAttribute("data-info-age");
+            document.getElementById("age-1").innerHTML = ageB;
+            var companyB = profile.querySelector("[data-info-company]").getAttribute("data-info-company");
+            document.getElementById("company-1").innerHTML = companyB;
+            var imgB = profile.querySelector("[data-info-img]").getAttribute('data-info-img');
+            document.getElementById("img-1").firstElementChild.src = imgB;
+            // canvas
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            confetti({
+                angle: randomInRange(55, 125),
+                spread: randomInRange(50, 70),
+                particleCount: randomInRange(50, 100),
+                origin: { y: 0.6 }
+            });
+        }
+        function show() {
+            var profileC = document.querySelector("#name-3").parentNode;
+            var nameC = profileC.querySelector("[data-name]").getAttribute("data-name");
+            document.getElementById("name-3").innerHTML = nameC;
+            var ageB = profileC.querySelector("[data-age]").getAttribute("data-age");
+            document.getElementById("age-3").innerHTML = ageB;
+            var companyC = profileC.querySelector("[data-company]").getAttribute("data-company");
+            document.getElementById("company-3").innerHTML = companyC;
+            var imgC = profileC.querySelector("[data-img]").getAttribute('data-img');
+            document.getElementById("img-3").firstElementChild.src = imgC;
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+            // canvas
+            confetti({
+                angle: randomInRange(55, 125),
+                spread: randomInRange(50, 70),
+                particleCount: randomInRange(50, 100),
+                origin: { y: 0.6 }
+            });
+        }
+
+        gsap.from('div.col-A', { duration: 2, y: "-100%", opacity: 1, ease: "bounce" });
+        gsap.from('div.col', { duration: 2, x: "-100vw", opacity: 1, ease: "power2.in", delay: 1 });
+        gsap.from('div.col-B', { duration: 2, x: "150%", opacity: 1, ease: "power2.in", delay: 1 });
+        gsap.from('body', { duration: 1, Height: "100vw", opacity: 0.5, ease: "slow", delay: 1 });
+
+       
+
+        const cards = document.querySelectorAll(".card");
+        const body = document.body;
+        var x = "";
+        var y = "";
+
+        let base = (e) => {
+            // x = e.pageX / window.innerWidth - 0.5;
+            // y = e.pageY / window.innerHeight - 0.5;
+            x = e.pageX / window.innerWidth - 0.5;
+            y = e.pageY / window.innerHeight - 0.5;
+            cards.forEach(card => {
+                if (x > x / 2) {
+                    card.style.transform = `perspective(1250px)rotateY(${x * 12 + 10}deg)`;
+                } else if (x < x / 2) {
+                    card.style.transform = `perspective(1250px)rotateY(${x * 12 - 10}deg)`;
+                }
+                // console.log(x);
+                if (x == "") {
+                    card.style.transform = `perspective(1250px)rotateY(0deg)`;
+                }
+            });
+        }
+
+        body.addEventListener("mousemove", base);
+
+
+    </script>
+
+
+</body>
+
+</html>

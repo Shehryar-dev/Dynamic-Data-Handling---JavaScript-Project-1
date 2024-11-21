@@ -1,0 +1,162 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: grab;
+}
+
+@font-face {
+    font-family: sFonts-A;
+    src: url(assets/fonts/Branch.ttf);
+}
+
+
+body {
+    background: url(assets/images/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+
+}
+
+.card {
+    height: 400px;
+    width: 320px;
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    border-radius: 8px;
+    box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.6);
+    font-family: 'Poppins', sans-serif;
+    opacity: 0.9;
+    transition: 0.6s ease;
+
+
+
+}
+
+.card:hover {
+    transform-style: preserve-3d;
+    perspective: 100px;
+    opacity: 1;
+}
+
+.card-img {
+    height: 120px;
+    width: 120px;
+    background-color: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+    position: absolute;
+    margin: 30px auto 20px auto;
+    left: 0;
+    right: 0;
+
+}
+
+.card-img img {
+    height: 86%;
+    border-radius: 50%;
+    margin-left: 7%;
+    margin-top: 7%;
+}
+
+h6 {
+    margin: 0;
+}
+
+.card-body {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 160px;
+}
+
+.primary-text {
+    color: #d5d5d5;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    margin: 5px 0;
+}
+
+.secondary-text {
+    color: #c0c0c0;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    border: none;
+
+}
+
+.details {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    height: 70px;
+    padding: 5px 0;
+    -ms-grid-columns: auto auto;
+    grid-template-columns: auto auto;
+    background-color: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 8px 8px;
+}
+
+.details>div {
+    text-align: center;
+}
+
+.details>div:first-child {
+    border-right: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.edit {
+    width: 80%;
+    padding: 15px 0;
+    position: absolute;
+    left: 10%;
+    top: 240px;
+    border-radius: 5px;
+    outline: none;
+}
+
+thead tr th {
+    font-family: sFonts-A;
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border-left: 1px dotted #aaa;
+}
+
+tbody tr td {
+    font-family: sFonts-A;
+    padding: 5px;
+    text-align: center;
+    border-left: 1px dotted #aaa;
+}
+
+.modal-title {
+    font-family: sFonts-A;
+    font-weight: bold;
+
+}
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+@media screen and (max-width:420px) {
+    body {
+        overflow-x: hidden;
+    }
+
+}
